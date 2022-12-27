@@ -10,6 +10,7 @@ export class AppComponent {
   includeLetters = false;
   includeNumbers = false;
   includeSymbols = false;
+  saveToClipboard = false;
   password = ""
 
   async copyToClipboard(text: string) {
@@ -24,6 +25,7 @@ export class AppComponent {
     const numbers = '1234567890';
     const letters = 'abcdefghijklmnopqrstuvwxwz';
     const symbols = "!@#$%^&*()_+=-~"
+    this.password = ''
 
     let validChars = ''
     if (this.includeLetters) {
@@ -40,7 +42,9 @@ export class AppComponent {
       const index = Math.round(Math.random() * (validChars.length - 1))
       this.password += validChars[index]
     }
-    this.copyToClipboard(this.password)
+    if (this.saveToClipboard) {
+      this.copyToClipboard(this.password)
+    }
   }
 
   onChangeUseLetters() {
@@ -53,6 +57,10 @@ export class AppComponent {
 
   onChangeUseSymbols() {
     this.includeSymbols = !this.includeSymbols;
+  }
+
+  onChangeSaveToClipboard() {
+    this.saveToClipboard = !this.saveToClipboard;
   }
 
   onInputLength(value: string) {

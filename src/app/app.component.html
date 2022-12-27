@@ -24,14 +24,23 @@
     (change)="onChangeUseSymbols()"
     type="checkbox" />
   </label>
-  
 </div>
+
+<div class="field">
+  <label class="checkbox" for="symbols"> Save to Clipboard
+    <input class="checkbox"
+    (change)="onChangeSaveToClipboard()"
+    type="checkbox" />
+  </label>
+</div>
+
 <div class="field">
 <button class="button is-link is-light"
   [disabled]="!(length && (includeLetters || includeNumbers || includeSymbols)) " 
   (click)="onButtonClick()">Generate</button>
 </div>
 <div class="box" *ngIf="password">
+  <p *ngIf="saveToClipboard">saved password to clipboard</p>
   <label class="label">Your Password</label>
   <input readonly class="input" [value]="password" />
 </div>

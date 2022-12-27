@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bulma/css/bulma.min.css";
+
+.container {
+  width:500px;
+  height: 100vh;
+  padding:20px;
+  display:flex;
+  flex-direction: column;
+  -webkit-box-shadow: inset 0px 0px 20px 1px rgba(0,0,0,0.23);
+-moz-box-shadow: inset 0px 0px 20px 1px rgba(0,0,0,0.23);
+box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.23);
+}
+
+.header {
+  text-align:center;
+  border:1px solid lightgrey;
+  padding:10px;
+}
+
+
+.button {
+  width: 100%;
+}
+
+.field {
+  margin-bottom:10px;
+}
